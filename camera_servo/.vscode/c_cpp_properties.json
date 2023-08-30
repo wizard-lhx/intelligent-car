@@ -9,7 +9,8 @@
                 "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
-                "${workspaceFolder}/RTT"
+                "${workspaceFolder}/RTT",
+                "${workspaceFolder}/component/camera"
             ],
             "defines": [
               "USE_HAL_DRIVER",
