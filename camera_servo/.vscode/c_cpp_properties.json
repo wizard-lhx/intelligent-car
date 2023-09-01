@@ -10,7 +10,9 @@
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
                 "${workspaceFolder}/RTT",
-                "${workspaceFolder}/component/camera"
+                "${workspaceFolder}/component/camera",
+                "${workspaceFolder}/algorithm/camera",
+                "${workspaceFolder}/algorithm/pid"
             ],
             "defines": [
               "USE_HAL_DRIVER",

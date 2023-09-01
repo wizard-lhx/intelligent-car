@@ -93,197 +93,25 @@ void system_delay_ms(uint16_t ms)
 //  Sample usage:
 //  @note
 //-------------------------------------------------------------------------------------------------------------------
+uint8_t tx_image_buf[65536];
+uint16_t tx_buf_count;
+uint16_t tx_count;
 void uart_write_buffer(UART_HandleTypeDef *huart, uint8_t *Data, uint32_t len)
 {
-  //    uart_putbuff(USARTx, Data, len);
-  HAL_UART_Transmit(huart, Data, len, 0xFFFF);
+  // uint8_t i;
+  // for (i = 0; i < len; i++)
+  // {
+  //   tx_image_buf[tx_buf_count++] = Data[i];
+  // }
+
+  // if (!(USART1->CR1 & USART_CR1_TXEIE))
+  // {
+  //   __HAL_UART_ENABLE_IT(huart, UART_IT_TXE);
+  // }
+  //HAL_UART_Transmit_IT(&huart1, Data, len);
+  HAL_UART_Transmit(&huart1, Data, len, 0xfffff);
+  //HAL_UART_Transmit_DMA(&huart1, Data, len);
 }
-
-static uint8_t rx_buff;
-static uint8_t mt9v03x_uart_receive[3];
-static uint8_t mt9v03x_receive_num = 0;
-static volatile uint8_t mt9v03x_uart_receive_flag = 0;
-
-//-------------------------------------------------------------------------------------------------------------------
-//  @brief      （总钻风摄像头）串口2中断事件回调函数
-//  @param      NULL
-//  @return     void
-//  @since      v1.0
-//  Sample usage:
-//  @note       //用于配置MT9V032(总钻风摄像头)和接收总钻风摄像头数据
-//-------------------------------------------------------------------------------------------------------------------
-// void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-// {
-//     if(huart->Instance == USART2)
-//     {
-//         mt9v03x_uart_receive[mt9v03x_receive_num] = rx_buff;
-//         mt9v03x_receive_num++;
-
-//         if(1==mt9v03x_receive_num && 0XA5!=mt9v03x_uart_receive[0])
-// 			mt9v03x_receive_num = 0;
-//         if(3 == mt9v03x_receive_num)
-//         {
-// 			mt9v03x_receive_num = 0;
-// 			mt9v03x_uart_receive_flag = 1;
-//         }
-//         HAL_UART_Receive_IT(&huart2,&rx_buff,1);
-//     }
-// }
-
-//-------------------------------------------------------------------------------------------------------------------
-// 函数简介     获取摄像头固件版本
-// 参数说明     void
-// 返回参数     uint16_t          0-获取错误 N-版本号
-// 使用示例     mt9v03x_get_version();                          // 调用该函数前请先初始化串口
-// 备注信息
-//-------------------------------------------------------------------------------------------------------------------
-// uint16_t mt9v03x_get_version(void)
-// {
-//     uint16_t temp = 0;
-//     uint8_t  uart_buffer[4];
-//     uint16_t timeout_count = 0;
-//     uint16_t return_value = 0;
-// //    uint32_t uart_buffer_index = 0;
-
-//     mt9v03x_uart_receive_flag = 0;
-
-//     uart_buffer[0] = 0xA5;
-//     uart_buffer[1] = MT9V03X_GET_STATUS;
-//     temp = MT9V03X_GET_VERSION;
-//     uart_buffer[2] = temp >> 8;
-//     uart_buffer[3] = (uint8_t)temp;
-//     uart_write_buffer(MT9V03X_COF_UART, uart_buffer, 4);
-
-//     do
-//     {
-//         if(mt9v03x_uart_receive_flag)
-//         {
-//             return_value = mt9v03x_uart_receive[1] << 8 | mt9v03x_uart_receive[2];
-//             break;
-//         }
-//         system_delay_ms(1);
-//     }
-//     while((MT9V03X_INIT_TIMEOUT > timeout_count ++));
-
-//     return return_value;
-// }
-
-//-------------------------------------------------------------------------------------------------------------------
-// 函数简介     配置摄像头内部配置信息
-// 参数说明     buff            发送配置信息的地址
-// 返回参数     uint8_t           1-失败 0-成功
-// 使用示例     mt9v03x_set_config(mt9v03x_set_confing_buffer);
-// 备注信息     内部调用
-//-------------------------------------------------------------------------------------------------------------------
-// static uint8_t mt9v03x_set_config(int16_t buff[MT9V03X_CONFIG_FINISH][2])
-// {
-//     uint8_t return_state = 1;
-//     uint8_t  uart_buffer[4];
-//     uint16_t temp = 0;
-//     uint16_t timeout_count = 0;
-//     uint32_t loop_count = 0;
-// //    uint32_t uart_buffer_index = 0;
-
-//     switch(mt9v03x_version)
-//     {
-// 		case 0x0230:
-// 			loop_count = MT9V03X_PCLK_MODE;
-// 			break;
-// 		default:
-// 			loop_count = MT9V03X_GAIN;
-// 			break;
-//     }
-// 	mt9v03x_uart_receive_flag = 0;
-//     // 设置参数  具体请参看问题锦集手册
-//     // 开始配置摄像头并重新初始化
-//     for(; MT9V03X_SET_DATA > loop_count; loop_count --)
-//     {
-//         uart_buffer[0] = 0xA5;
-//         uart_buffer[1] = buff[loop_count][0];
-//         temp = buff[loop_count][1];
-//         uart_buffer[2] = temp >> 8;
-//         uart_buffer[3] = (uint8_t)temp;
-//         uart_write_buffer(MT9V03X_COF_UART, uart_buffer, 4);
-
-//         system_delay_ms(2);
-//     }
-
-//     do
-//     {
-//         if(mt9v03x_uart_receive_flag)
-//         {
-//             return_state = 0;
-//             break;
-//         }
-//         system_delay_ms(1);
-//     }
-//     while(MT9V03X_INIT_TIMEOUT > timeout_count ++);
-//     // 以上部分对摄像头配置的数据全部都会保存在摄像头上51单片机的eeprom中
-//     // 利用set_exposure_time函数单独配置的曝光数据不存储在eeprom中
-//     return return_state;
-// }
-
-//-------------------------------------------------------------------------------------------------------------------
-// 函数简介     获取摄像头内部配置信息
-// 参数说明     buff            接收配置信息的地址
-// 返回参数     uint8_t           1-失败 0-成功
-// 使用示例     mt9v03x_get_config(mt9v03x_get_confing_buffer);
-// 备注信息     内部调用
-//-------------------------------------------------------------------------------------------------------------------
-// static uint8_t mt9v03x_get_config(int16_t buff[MT9V03X_CONFIG_FINISH - 1][2])
-// {
-//     uint8_t return_state = 0;
-//     uint8_t  uart_buffer[4];
-//     uint16_t temp = 0;
-//     uint16_t timeout_count = 0;
-//     uint32_t loop_count = 0;
-// //    uint32_t uart_buffer_index = 0;
-
-//     switch(mt9v03x_version)
-//     {
-//     case 0x0230:
-//         loop_count = MT9V03X_PCLK_MODE;
-//         break;
-//     default:
-//         loop_count = MT9V03X_GAIN;
-//         break;
-//     }
-
-//     for(loop_count = loop_count - 1; 1 <= loop_count; loop_count --)
-//     {
-// 		mt9v03x_uart_receive_flag = 0;
-//         if((0x0230 > mt9v03x_version) && (MT9V03X_PCLK_MODE == buff[loop_count][0]))
-//         {
-//             continue;
-//         }
-//         uart_buffer[0] = 0xA5;
-//         uart_buffer[1] = MT9V03X_GET_STATUS;
-//         temp = buff[loop_count][0];
-//         uart_buffer[2] = temp >> 8;
-//         uart_buffer[3] = (uint8_t)temp;
-//         uart_write_buffer(MT9V03X_COF_UART, uart_buffer, 4);
-
-//         timeout_count = 0;
-//         do
-//         {
-//             if(mt9v03x_uart_receive_flag)
-//             {
-//                 return_state = 0;
-// 				buff[loop_count][1] = mt9v03x_uart_receive[1] << 8 | mt9v03x_uart_receive[2];
-//                 break;
-//             }
-//             system_delay_ms(1);
-//         }
-//         while(MT9V03X_INIT_TIMEOUT > timeout_count ++);
-
-//         if(MT9V03X_INIT_TIMEOUT < timeout_count)                                // 超时
-//         {
-//             return_state = 1;
-//             break;
-//         }
-//     }
-//     return return_state;
-// }
 
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      总钻风摄像头图像发送至上位机查看图像
@@ -328,36 +156,7 @@ uint8_t mt9v03x_init(void)
     }
     else
     {
-      // system_delay_ms(200);
-      // // 初始化串口
-      //       MX_USART2_UART_Init();
-      // HAL_UART_MspInit(MT9V03X_COF_UART);
-      // // 设置接收中断
-      // HAL_UART_Receive_IT(MT9V03X_COF_UART,&rx_buff,1);
-
-      // // 获取版本号
-      //       mt9v03x_version = mt9v03x_get_version();
-
-      //       if(mt9v03x_set_config(mt9v03x_set_confing_buffer))
-      //       {
-      //           // 如果程序在输出了断言信息 并且提示出错位置在这里
-      //           // 那么就是串口通信出错并超时退出了
-      //           // 检查一下接线有没有问题 如果没问题可能就是坏了
-
-      //           return_state = 1;
-      //           break;
-      //       }
-
-      //       // 获取配置便于查看配置是否正确
-      //       if(mt9v03x_get_config(mt9v03x_get_confing_buffer))
-      //       {
-      //           // 如果程序在输出了断言信息 并且提示出错位置在这里
-      //           // 那么就是串口通信出错并超时退出了
-      //           // 检查一下接线有没有问题 如果没问题可能就是坏了
-
-      //           return_state = 1;
-      //           break;
-      //       }
+      
     }
   } while (0);
 

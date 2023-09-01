@@ -35,17 +35,7 @@
 
 
 #include "main.h"
-#include "dma.h"
 
-#include "usart.h"
-
-extern UART_HandleTypeDef huart2;
-
-extern DMA_HandleTypeDef hdma_tim1_ch4_trig_com;
-//--------------------------------------------------------------------------------------------------
-// 带MCU的摄像头
-//--------------------------------------------------------------------------------------------------
-#define MT9V03X_COF_UART		&huart2
 
 //--------------------------------------------------------------------------------------------------
 // 不带MCU的摄像头
@@ -62,9 +52,9 @@ extern DMA_HandleTypeDef hdma_tim1_ch4_trig_com;
 //        	摄像头数据接口
 //--------------------------------------------------------------------------------------------------
 
-#define MT9V032_DATAPORT 		(uint32_t)&GPIOB->IDR	                		// DMA数据口，禁止随意更改
+//#define MT9V032_DATAPORT 		(uint32_t)&GPIOB->IDR	                		// DMA数据口，禁止随意更改
 
-#define MT9V032_DMA_CH          &hdma_tim1_ch4_trig_com                     	// 定义摄像头的DMA采集通道，禁止随意更改
+//#define MT9V032_DMA_CH          &hdma_tim1_ch4_trig_com                     	// 定义摄像头的DMA采集通道，禁止随意更改
 
 //--------------------------------------------------------------------------------------------------
 // 摄像头默认参数配置 在此修改摄像头配置
@@ -115,11 +105,10 @@ typedef enum
 
 extern volatile uint8_t   mt9v03x_finish_flag;                                            // 一场图像采集完成标志位
 extern uint8_t    mt9v03x_image[MT9V03X_H][MT9V03X_W];
+extern uint8_t tx_image_buf[65536];
+extern uint16_t tx_buf_count;
+extern uint16_t tx_count;
 
-
-uint16_t      mt9v03x_get_version         (void);
-uint8_t       mt9v03x_set_exposure_time   (uint16_t light);
-uint8_t       mt9v03x_set_reg             (uint8_t addr, uint16_t data);
 
 uint8_t       mt9v03x_init                (void);
 

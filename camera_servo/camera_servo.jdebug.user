@@ -1,0 +1,26 @@
+
+
+OpenDocument="stm32f4xx_hal_uart.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c", Line=3172
+OpenDocument="image.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/algorithm/camera/image.c", Line=468
+OpenDocument="tim.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/Src/tim.c", Line=238
+OpenDocument="SEEKFREE_MT9V03X.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/component/camera/SEEKFREE_MT9V03X.c", Line=93
+OpenDocument="stm32f4xx_it.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/Src/stm32f4xx_it.c", Line=203
+OpenDocument="main.c", FilePath="E:/Working/IntelligentCar/intelligent_car/camera_servo/Src/main.c", Line=65
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=0, w=186, h=373, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Watched Data 1", DockArea=RIGHT, x=0, y=0, w=300, h=373, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=1, y=0, w=456, h=269, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=527, h=269, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=1, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="1 ns / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="351;-8", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=1, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="357;-9", CodeGraphLegendShown=1, CodeGraphLegendPosition="314;0"
+OpenWindow="Console", DockArea=BOTTOM, x=2, y=0, w=381, h=269, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[168;100;100;100;704]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time"], ColWidths=[100;100]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[100;100;100;100;100;100;100;100;100]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[100;100;100;100]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;26]
+WatchedExpression="servo_pulse", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="center_line", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="l_border", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="r_border", RefreshRate=5, Window=Watched Data 1

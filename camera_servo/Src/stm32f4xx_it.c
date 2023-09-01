@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "SEEKFREE_MT9V03X.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +58,9 @@
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_dcmi;
 extern DCMI_HandleTypeDef hdcmi;
+extern TIM_HandleTypeDef htim2;
+extern DMA_HandleTypeDef hdma_usart1_tx;
+extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -200,6 +204,41 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART1 global interrupt.
+  */
+void USART1_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
+  // if (__HAL_UART_GET_FLAG(&huart1, UART_IT_TXE))
+  // {
+  //   USART1->DR = tx_image_buf[tx_count++]; //写DR清除中断标志
+  //   if (tx_count == tx_buf_count)
+  //   {
+  //       USART1->CR1 &= ~USART_CR1_TXEIE; //关闭TXE（发送中断）中断
+  //   }
+  // }
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+
+  /* USER CODE END USART1_IRQn 1 */
+}
+
+/**
   * @brief This function handles DMA2 stream1 global interrupt.
   */
 void DMA2_Stream1_IRQHandler(void)
@@ -211,6 +250,20 @@ void DMA2_Stream1_IRQHandler(void)
   /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
 
   /* USER CODE END DMA2_Stream1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 stream7 global interrupt.
+  */
+void DMA2_Stream7_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2_Stream7_IRQn 0 */
+
+  /* USER CODE END DMA2_Stream7_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_usart1_tx);
+  /* USER CODE BEGIN DMA2_Stream7_IRQn 1 */
+
+  /* USER CODE END DMA2_Stream7_IRQn 1 */
 }
 
 /**

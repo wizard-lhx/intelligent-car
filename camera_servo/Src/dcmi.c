@@ -204,10 +204,10 @@ void HAL_DCMI_MspDeInit(DCMI_HandleTypeDef* dcmiHandle)
 //  @brief      摄像头帧中断事件回调函数
 //  @return     void
 //  @since      v1.1
-//  Sample usage:		该函数在stm32f4xx_hal_dcmi.c文件中的HAL_DCMI_IRQHandler函数中进行回调
+//  Sample usage:		该函数在stm32f4xx_hal_dcmi.c文件中的HAL_DCMI_IRQHandler函数中进行回�?
 //-------------------------------------------------------------------------------------------------------------------
 void HAL_DCMI_FrameEventCallback(DCMI_HandleTypeDef *hdcmi)
 {
-    mt9v03x_finish_flag = 1; 										//标志位置为1
+    mt9v03x_finish_flag = 1; 										//标志位置�?1
 }
 /* USER CODE END 1 */

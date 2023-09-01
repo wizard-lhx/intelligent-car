@@ -28,6 +28,8 @@
 /* USER CODE BEGIN Includes */
 #include "log.h"
 #include "SEEKFREE_MT9V03X.h"
+#include "image.h"
+#include "pid.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +50,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint16_t servo_pulse = 999;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,11 +95,14 @@ int main(void)
   MX_TIM1_Init();
   MX_DCMI_Init();
   MX_USART1_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_Base_Start_IT(&htim2);
+  PID_Init(&angle_pid, 10.0f, 0.0f, 0.0f, 0.0f, 500.0f);
   while(mt9v03x_init())
   {
     
@@ -111,7 +115,8 @@ int main(void)
   {
     if(mt9v03x_finish_flag == 1)
     {
-      seekfree_sendimg_mt9v03x(&huart1, mt9v03x_image, MT9V03X_IMAGE_SIZE);
+      image_process();
+      seekfree_sendimg_mt9v03x(&huart1, bin_image, IMAGE_SIZE);
       mt9v03x_finish_flag = 0;
     }
     /* USER CODE END WHILE */
