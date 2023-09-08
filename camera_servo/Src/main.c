@@ -96,13 +96,18 @@ int main(void)
   MX_DCMI_Init();
   MX_USART1_UART_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_Base_Start_IT(&htim2);
-  PID_Init(&angle_pid, 10.0f, 0.0f, 0.0f, 0.0f, 500.0f);
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+  PID_Init(&angle_pid, 10.0f, 0.0f, 3.0f, 0.0f, 500.0f);
+  PID_Init(&speed_pid, 0.4f, 0.2f, 0.0f, 10.0f, 10.0f);
   while(mt9v03x_init())
   {
     

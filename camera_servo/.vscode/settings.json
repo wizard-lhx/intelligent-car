@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    "seekfree_mt9v03x_config.h": "c"
+    "seekfree_mt9v03x_config.h": "c",
+    "gpio.h": "c"
   }
 }

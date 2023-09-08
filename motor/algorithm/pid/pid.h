@@ -21,7 +21,6 @@ typedef struct
 	float max_iout;
 } pid_t;
 
-extern pid_t angle_pid;
 extern pid_t speed_pid;
 
 void PID_Init(pid_t *pid, float kp, float ki, float kd, float max_iout, float max_out);

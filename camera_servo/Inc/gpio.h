@@ -39,7 +39,7 @@ extern "C" {
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+extern uint16_t encoder_cnt;
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

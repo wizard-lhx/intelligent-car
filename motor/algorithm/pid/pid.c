@@ -1,6 +1,5 @@
 #include "pid.h"   // PID 算法驱动函数
 
-pid_t angle_pid;
 pid_t speed_pid;
 
 void PID_Init(pid_t *pid, float kp, float ki, float kd, float max_iout, float max_out)
@@ -26,7 +25,7 @@ float PID_Cal(pid_t *pid, float set, float ref)
 	pid->last_error = pid->error;
 	
 	// 积分分离
-	if(pid->error < 20.0f && pid->error > -20.0f)
+	if(pid->error < 20.0f || pid->error > -20.0f)
 	{
 		pid->iout += pid->ki * pid->error;
 	}

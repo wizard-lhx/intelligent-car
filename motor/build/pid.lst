@@ -1,0 +1,371 @@
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"pid.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.PID_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	PID_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	PID_Init:
+  25              	.LVL0:
+  26              	.LFB65:
+  27              		.file 1 "algorithm/pid/pid.c"
+   1:algorithm/pid/pid.c **** #include "pid.h"   // PID 算法驱动函数
+   2:algorithm/pid/pid.c **** 
+   3:algorithm/pid/pid.c **** pid_t speed_pid;
+   4:algorithm/pid/pid.c **** 
+   5:algorithm/pid/pid.c **** void PID_Init(pid_t *pid, float kp, float ki, float kd, float max_iout, float max_out)
+   6:algorithm/pid/pid.c **** {
+  28              		.loc 1 6 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 8, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   7:algorithm/pid/pid.c **** 	pid->kp = kp;
+  33              		.loc 1 7 2 view .LVU1
+  34              		.loc 1 7 10 is_stmt 0 view .LVU2
+  35 0000 0160     		str	r1, [r0]	@ float
+   8:algorithm/pid/pid.c **** 	pid->ki = ki;
+  36              		.loc 1 8 2 is_stmt 1 view .LVU3
+  37              		.loc 1 8 10 is_stmt 0 view .LVU4
+  38 0002 4260     		str	r2, [r0, #4]	@ float
+   9:algorithm/pid/pid.c **** 	pid->kd = kd;
+  39              		.loc 1 9 2 is_stmt 1 view .LVU5
+  40              		.loc 1 9 10 is_stmt 0 view .LVU6
+  41 0004 8360     		str	r3, [r0, #8]	@ float
+  10:algorithm/pid/pid.c **** 	
+  11:algorithm/pid/pid.c **** 	pid->max_iout = max_iout;
+  42              		.loc 1 11 2 is_stmt 1 view .LVU7
+  43              		.loc 1 11 16 is_stmt 0 view .LVU8
+  44 0006 009B     		ldr	r3, [sp]	@ float
+  45              	.LVL1:
+  46              		.loc 1 11 16 view .LVU9
+  47 0008 8362     		str	r3, [r0, #40]	@ float
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 2
+
+
+  12:algorithm/pid/pid.c **** 	pid->max_out = max_out;
+  48              		.loc 1 12 2 is_stmt 1 view .LVU10
+  49              		.loc 1 12 15 is_stmt 0 view .LVU11
+  50 000a 019B     		ldr	r3, [sp, #4]	@ float
+  51 000c 4362     		str	r3, [r0, #36]	@ float
+  13:algorithm/pid/pid.c **** 	
+  14:algorithm/pid/pid.c **** 	pid->pout=pid->iout=pid->dout=pid->error=pid->last_error=0.0f;
+  52              		.loc 1 14 2 is_stmt 1 view .LVU12
+  53              		.loc 1 14 58 is_stmt 0 view .LVU13
+  54 000e 0023     		movs	r3, #0
+  55 0010 0361     		str	r3, [r0, #16]	@ float
+  56              		.loc 1 14 42 view .LVU14
+  57 0012 C360     		str	r3, [r0, #12]	@ float
+  58              		.loc 1 14 31 view .LVU15
+  59 0014 C361     		str	r3, [r0, #28]	@ float
+  60              		.loc 1 14 21 view .LVU16
+  61 0016 8361     		str	r3, [r0, #24]	@ float
+  62              		.loc 1 14 11 view .LVU17
+  63 0018 4361     		str	r3, [r0, #20]	@ float
+  15:algorithm/pid/pid.c **** }
+  64              		.loc 1 15 1 view .LVU18
+  65 001a 7047     		bx	lr
+  66              		.cfi_endproc
+  67              	.LFE65:
+  69              		.global	__aeabi_fsub
+  70              		.global	__aeabi_fmul
+  71              		.global	__aeabi_fcmplt
+  72              		.global	__aeabi_fcmpgt
+  73              		.global	__aeabi_fadd
+  74              		.section	.text.PID_Cal,"ax",%progbits
+  75              		.align	1
+  76              		.global	PID_Cal
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  81              	PID_Cal:
+  82              	.LVL2:
+  83              	.LFB66:
+  16:algorithm/pid/pid.c **** 
+  17:algorithm/pid/pid.c **** float PID_Cal(pid_t *pid, float set, float ref)
+  18:algorithm/pid/pid.c **** {
+  84              		.loc 1 18 1 is_stmt 1 view -0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		.loc 1 18 1 is_stmt 0 view .LVU20
+  89 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  90              	.LCFI0:
+  91              		.cfi_def_cfa_offset 24
+  92              		.cfi_offset 4, -24
+  93              		.cfi_offset 5, -20
+  94              		.cfi_offset 6, -16
+  95              		.cfi_offset 7, -12
+  96              		.cfi_offset 8, -8
+  97              		.cfi_offset 14, -4
+  98 0004 0446     		mov	r4, r0
+  99 0006 0846     		mov	r0, r1
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 3
+
+
+ 100              	.LVL3:
+  19:algorithm/pid/pid.c **** 	pid->error = set - ref;
+ 101              		.loc 1 19 2 is_stmt 1 view .LVU21
+ 102              		.loc 1 19 19 is_stmt 0 view .LVU22
+ 103 0008 1146     		mov	r1, r2
+ 104              	.LVL4:
+ 105              		.loc 1 19 19 view .LVU23
+ 106 000a FFF7FEFF 		bl	__aeabi_fsub
+ 107              	.LVL5:
+ 108              		.loc 1 19 19 view .LVU24
+ 109 000e 0546     		mov	r5, r0
+ 110              		.loc 1 19 13 view .LVU25
+ 111 0010 E060     		str	r0, [r4, #12]	@ float
+  20:algorithm/pid/pid.c **** 	
+  21:algorithm/pid/pid.c **** 	pid->pout = pid->kp * pid->error;
+ 112              		.loc 1 21 2 is_stmt 1 view .LVU26
+ 113              		.loc 1 21 22 is_stmt 0 view .LVU27
+ 114 0012 2168     		ldr	r1, [r4]	@ float
+ 115 0014 FFF7FEFF 		bl	__aeabi_fmul
+ 116              	.LVL6:
+ 117 0018 0746     		mov	r7, r0
+ 118              		.loc 1 21 12 view .LVU28
+ 119 001a 6061     		str	r0, [r4, #20]	@ float
+  22:algorithm/pid/pid.c **** 	//pid->iout += pid->ki * pid->error;
+  23:algorithm/pid/pid.c **** 	pid->dout = pid->kd * (pid->error - pid->last_error);
+ 120              		.loc 1 23 2 is_stmt 1 view .LVU29
+ 121              		.loc 1 23 17 is_stmt 0 view .LVU30
+ 122 001c A668     		ldr	r6, [r4, #8]	@ float
+ 123              		.loc 1 23 36 view .LVU31
+ 124 001e 2169     		ldr	r1, [r4, #16]	@ float
+ 125 0020 2846     		mov	r0, r5
+ 126 0022 FFF7FEFF 		bl	__aeabi_fsub
+ 127              	.LVL7:
+ 128 0026 0146     		mov	r1, r0
+ 129              		.loc 1 23 22 view .LVU32
+ 130 0028 3046     		mov	r0, r6
+ 131 002a FFF7FEFF 		bl	__aeabi_fmul
+ 132              	.LVL8:
+ 133 002e 0646     		mov	r6, r0
+ 134              		.loc 1 23 12 view .LVU33
+ 135 0030 E061     		str	r0, [r4, #28]	@ float
+  24:algorithm/pid/pid.c **** 	
+  25:algorithm/pid/pid.c **** 	pid->last_error = pid->error;
+ 136              		.loc 1 25 2 is_stmt 1 view .LVU34
+ 137              		.loc 1 25 18 is_stmt 0 view .LVU35
+ 138 0032 2561     		str	r5, [r4, #16]	@ float
+  26:algorithm/pid/pid.c **** 	
+  27:algorithm/pid/pid.c **** 	// 积分分离
+  28:algorithm/pid/pid.c **** 	if(pid->error < 20.0f || pid->error > -20.0f)
+ 139              		.loc 1 28 2 is_stmt 1 view .LVU36
+ 140              		.loc 1 28 4 is_stmt 0 view .LVU37
+ 141 0034 2249     		ldr	r1, .L23
+ 142 0036 2846     		mov	r0, r5
+ 143 0038 FFF7FEFF 		bl	__aeabi_fcmplt
+ 144              	.LVL9:
+ 145 003c 20B9     		cbnz	r0, .L3
+ 146              		.loc 1 28 24 discriminator 1 view .LVU38
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 4
+
+
+ 147 003e 2149     		ldr	r1, .L23+4
+ 148 0040 2846     		mov	r0, r5
+ 149 0042 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 150              	.LVL10:
+ 151 0046 20B3     		cbz	r0, .L19
+ 152              	.L3:
+  29:algorithm/pid/pid.c **** 	{
+  30:algorithm/pid/pid.c **** 		pid->iout += pid->ki * pid->error;
+ 153              		.loc 1 30 3 is_stmt 1 view .LVU39
+ 154              		.loc 1 30 24 is_stmt 0 view .LVU40
+ 155 0048 6168     		ldr	r1, [r4, #4]	@ float
+ 156 004a 2846     		mov	r0, r5
+ 157 004c FFF7FEFF 		bl	__aeabi_fmul
+ 158              	.LVL11:
+ 159 0050 0146     		mov	r1, r0
+ 160              		.loc 1 30 13 view .LVU41
+ 161 0052 A069     		ldr	r0, [r4, #24]	@ float
+ 162 0054 FFF7FEFF 		bl	__aeabi_fadd
+ 163              	.LVL12:
+ 164 0058 A061     		str	r0, [r4, #24]	@ float
+ 165              	.L6:
+  31:algorithm/pid/pid.c **** 	}
+  32:algorithm/pid/pid.c **** 	else
+  33:algorithm/pid/pid.c **** 	{
+  34:algorithm/pid/pid.c **** 		pid->iout = 0;
+  35:algorithm/pid/pid.c **** 	}
+  36:algorithm/pid/pid.c **** 	
+  37:algorithm/pid/pid.c **** 	// 积分限幅
+  38:algorithm/pid/pid.c **** 	if(pid->iout > pid->max_iout)
+ 166              		.loc 1 38 2 is_stmt 1 view .LVU42
+ 167              		.loc 1 38 8 is_stmt 0 view .LVU43
+ 168 005a D4F81880 		ldr	r8, [r4, #24]	@ float
+ 169              		.loc 1 38 20 view .LVU44
+ 170 005e A56A     		ldr	r5, [r4, #40]	@ float
+ 171              		.loc 1 38 4 view .LVU45
+ 172 0060 2946     		mov	r1, r5
+ 173 0062 4046     		mov	r0, r8
+ 174 0064 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 175              	.LVL13:
+ 176 0068 B0B1     		cbz	r0, .L20
+  39:algorithm/pid/pid.c **** 	{
+  40:algorithm/pid/pid.c **** 		pid->iout = pid->max_iout;
+ 177              		.loc 1 40 3 is_stmt 1 view .LVU46
+ 178              		.loc 1 40 13 is_stmt 0 view .LVU47
+ 179 006a A561     		str	r5, [r4, #24]	@ float
+ 180              	.L9:
+  41:algorithm/pid/pid.c **** 	}
+  42:algorithm/pid/pid.c **** 	else if(pid->iout < -pid->max_iout)
+  43:algorithm/pid/pid.c **** 	{
+  44:algorithm/pid/pid.c **** 		pid->iout = -pid->max_iout;
+  45:algorithm/pid/pid.c **** 	}
+  46:algorithm/pid/pid.c **** 	
+  47:algorithm/pid/pid.c **** 	pid->out = pid->pout + pid->iout + pid->dout;
+ 181              		.loc 1 47 2 is_stmt 1 view .LVU48
+ 182              		.loc 1 47 23 is_stmt 0 view .LVU49
+ 183 006c A169     		ldr	r1, [r4, #24]	@ float
+ 184 006e 3846     		mov	r0, r7
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 5
+
+
+ 185 0070 FFF7FEFF 		bl	__aeabi_fadd
+ 186              	.LVL14:
+ 187 0074 0146     		mov	r1, r0
+ 188              		.loc 1 47 35 view .LVU50
+ 189 0076 3046     		mov	r0, r6
+ 190 0078 FFF7FEFF 		bl	__aeabi_fadd
+ 191              	.LVL15:
+ 192 007c 0546     		mov	r5, r0
+ 193              		.loc 1 47 11 view .LVU51
+ 194 007e 2062     		str	r0, [r4, #32]	@ float
+  48:algorithm/pid/pid.c **** 	// 输出限幅
+  49:algorithm/pid/pid.c **** 	if(pid->out > pid->max_out)
+ 195              		.loc 1 49 2 is_stmt 1 view .LVU52
+ 196              		.loc 1 49 19 is_stmt 0 view .LVU53
+ 197 0080 666A     		ldr	r6, [r4, #36]	@ float
+ 198              		.loc 1 49 4 view .LVU54
+ 199 0082 3146     		mov	r1, r6
+ 200 0084 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 201              	.LVL16:
+ 202 0088 80B1     		cbz	r0, .L21
+  50:algorithm/pid/pid.c **** 	{
+  51:algorithm/pid/pid.c **** 		pid->out = pid->max_out;
+ 203              		.loc 1 51 3 is_stmt 1 view .LVU55
+ 204              		.loc 1 51 12 is_stmt 0 view .LVU56
+ 205 008a 2662     		str	r6, [r4, #32]	@ float
+ 206              	.L13:
+  52:algorithm/pid/pid.c **** 	}
+  53:algorithm/pid/pid.c **** 	else if(pid->out < -pid->max_out)
+  54:algorithm/pid/pid.c **** 	{
+  55:algorithm/pid/pid.c **** 		pid->out = -pid->max_out;
+  56:algorithm/pid/pid.c **** 	}
+  57:algorithm/pid/pid.c **** 	
+  58:algorithm/pid/pid.c **** 	return pid->out;
+ 207              		.loc 1 58 2 is_stmt 1 view .LVU57
+  59:algorithm/pid/pid.c **** }
+ 208              		.loc 1 59 1 is_stmt 0 view .LVU58
+ 209 008c 206A     		ldr	r0, [r4, #32]	@ float
+ 210 008e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 211              	.LVL17:
+ 212              	.L19:
+  34:algorithm/pid/pid.c **** 	}
+ 213              		.loc 1 34 3 is_stmt 1 view .LVU59
+  34:algorithm/pid/pid.c **** 	}
+ 214              		.loc 1 34 13 is_stmt 0 view .LVU60
+ 215 0092 0023     		movs	r3, #0
+ 216 0094 A361     		str	r3, [r4, #24]	@ float
+ 217 0096 E0E7     		b	.L6
+ 218              	.L20:
+  42:algorithm/pid/pid.c **** 	{
+ 219              		.loc 1 42 7 is_stmt 1 view .LVU61
+  42:algorithm/pid/pid.c **** 	{
+ 220              		.loc 1 42 22 is_stmt 0 view .LVU62
+ 221 0098 05F10045 		add	r5, r5, #-2147483648
+  42:algorithm/pid/pid.c **** 	{
+ 222              		.loc 1 42 9 view .LVU63
+ 223 009c 2946     		mov	r1, r5
+ 224 009e 4046     		mov	r0, r8
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 6
+
+
+ 225 00a0 FFF7FEFF 		bl	__aeabi_fcmplt
+ 226              	.LVL18:
+ 227 00a4 0028     		cmp	r0, #0
+ 228 00a6 E1D0     		beq	.L9
+  44:algorithm/pid/pid.c **** 	}
+ 229              		.loc 1 44 3 is_stmt 1 view .LVU64
+  44:algorithm/pid/pid.c **** 	}
+ 230              		.loc 1 44 13 is_stmt 0 view .LVU65
+ 231 00a8 A561     		str	r5, [r4, #24]	@ float
+ 232 00aa DFE7     		b	.L9
+ 233              	.L21:
+  53:algorithm/pid/pid.c **** 	{
+ 234              		.loc 1 53 7 is_stmt 1 view .LVU66
+  53:algorithm/pid/pid.c **** 	{
+ 235              		.loc 1 53 21 is_stmt 0 view .LVU67
+ 236 00ac 06F10046 		add	r6, r6, #-2147483648
+  53:algorithm/pid/pid.c **** 	{
+ 237              		.loc 1 53 9 view .LVU68
+ 238 00b0 3146     		mov	r1, r6
+ 239 00b2 2846     		mov	r0, r5
+ 240 00b4 FFF7FEFF 		bl	__aeabi_fcmplt
+ 241              	.LVL19:
+ 242 00b8 0028     		cmp	r0, #0
+ 243 00ba E7D0     		beq	.L13
+  55:algorithm/pid/pid.c **** 	}
+ 244              		.loc 1 55 3 is_stmt 1 view .LVU69
+  55:algorithm/pid/pid.c **** 	}
+ 245              		.loc 1 55 12 is_stmt 0 view .LVU70
+ 246 00bc 2662     		str	r6, [r4, #32]	@ float
+ 247 00be E5E7     		b	.L13
+ 248              	.L24:
+ 249              		.align	2
+ 250              	.L23:
+ 251 00c0 0000A041 		.word	1101004800
+ 252 00c4 0000A0C1 		.word	-1046478848
+ 253              		.cfi_endproc
+ 254              	.LFE66:
+ 256              		.global	speed_pid
+ 257              		.section	.bss.speed_pid,"aw",%nobits
+ 258              		.align	2
+ 261              	speed_pid:
+ 262 0000 00000000 		.space	44
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 "algorithm/pid/pid.h"
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pid.c
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:18     .text.PID_Init:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:24     .text.PID_Init:00000000 PID_Init
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:75     .text.PID_Cal:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:81     .text.PID_Cal:00000000 PID_Cal
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:251    .text.PID_Cal:000000c0 $d
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:261    .bss.speed_pid:00000000 speed_pid
+C:\Users\wizar\AppData\Local\Temp\ccunlZi4.s:258    .bss.speed_pid:00000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_fsub
+__aeabi_fmul
+__aeabi_fcmplt
+__aeabi_fcmpgt
+__aeabi_fadd

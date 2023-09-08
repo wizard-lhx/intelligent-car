@@ -10,7 +10,7 @@
 
 
 //宏定义
-#define IMAGE_HEIGHT	120//图像高度
+#define IMAGE_HEIGHT	60//图像高度
 #define IMAGE_WIDTH	188//图像宽度
 #define IMAGE_SIZE ((IMAGE_WIDTH) * (IMAGE_HEIGHT))
 
@@ -25,6 +25,7 @@ extern uint8_t bin_image[IMAGE_HEIGHT][IMAGE_WIDTH];//图像数组
 extern uint8_t center_line[IMAGE_HEIGHT];
 
 extern void image_process(void); //直接在中断或循环里调用此程序就可以循环执行了
+float calc_center_line_error(void);
 
 #endif /*_IMAGE_H*/
 

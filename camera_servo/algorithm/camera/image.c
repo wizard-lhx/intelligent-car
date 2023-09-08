@@ -4,6 +4,7 @@
 //------------------------------------------------------------------------------------------------------------------
 #include "image.h"
 #include "SEEKFREE_MT9V03X.h"
+#include "math.h"
 
 /*
 函数名称：int my_abs(int value)
@@ -154,6 +155,7 @@ void turn_to_bin(void)
 {
   uint8_t i, j;
   image_thereshold = OSTU_threshold(original_image[0], IMAGE_WIDTH, IMAGE_HEIGHT);
+  //image_thereshold = limit_a_b(image_thereshold, 0, 85);
   for (i = 0; i < IMAGE_HEIGHT; i++)
   {
     for (j = 0; j < IMAGE_WIDTH; j++)
@@ -575,6 +577,137 @@ void image_draw_rectan(uint8_t (*image)[IMAGE_WIDTH])
     // image[IMAGE_HEIGHT-1][i] = 0;
   }
 }
+static void slope_intercept_calc(int16_t *line, uint8_t begin, uint8_t end, float *slope, float *intercept)
+{
+  float xsum = 0, ysum = 0, xysum = 0, x2sum = 0;
+
+  static float last_slope;
+  uint8_t point_cnt = 0;
+
+  for(uint8_t i = begin; i < end; i++)
+  {
+    if(line[i] != -94)
+    {
+      point_cnt++;
+    }
+  }
+  if(point_cnt < 10)
+  {
+    return;
+  }
+
+  for (uint8_t i = begin; i < end; i++)
+  {
+    if(line[i] != -94)
+    {
+      xsum += line[i];
+      ysum += i;
+      xysum += i * (line[i]);
+      x2sum += (line[i] * line[i]);
+    }
+    else
+    {
+      continue;
+    }
+  }
+  if (point_cnt * x2sum - xsum * xsum) // 判断除数是否为零
+  {
+    *slope = (point_cnt * xysum - xsum * ysum) / (point_cnt * x2sum - xsum * xsum);
+    last_slope = *slope;
+  }
+  else
+  {
+    *slope = last_slope;
+  }
+  *intercept = ysum / point_cnt - (*slope) * xsum / point_cnt;
+}
+
+uint8_t black_line[IMAGE_HEIGHT];
+float error = 0.0f;
+float slope, intercept;
+float calc_center_line_error(void)
+{
+  int16_t line[IMAGE_HEIGHT];
+  error = 0.0f;
+  for(uint8_t i = 0; i < IMAGE_HEIGHT; i++)
+  {
+    line[i] = (int16_t)black_line[IMAGE_HEIGHT - 1 - i] - (IMAGE_WIDTH / 2);
+  }
+  slope_intercept_calc(line, 5, 25, &slope, &intercept);
+  // error = (float)atan((double)slope) * 180.0f / 3.1415926f;
+  // if(error < 0)
+  // {
+  //   error = -90.0f - error;
+  // }
+  // else if(error > 0)
+  // {
+  //   error = 90.0f - error;
+  // }
+  if(slope != 0)
+  {
+    error = (35 - intercept) / slope;
+  }
+  else
+  {
+    error = 0;
+  }
+  return error;
+}
+
+void get_black_line(uint8_t (*bin_image)[IMAGE_WIDTH])
+{
+  uint8_t white_pixel_cnt = 0;
+  uint8_t black_line_l = 0, black_line_r = 0;
+  for(uint8_t i = 0; i < IMAGE_HEIGHT; i++)
+  {
+    black_line[i] = IMAGE_WIDTH / 2;
+  }
+  for(uint8_t i = IMAGE_HEIGHT - 1; i > (uint8_t)(IMAGE_HEIGHT * 1.0 / 4.0); i--)
+  {
+    for(uint8_t j = 0; j < IMAGE_WIDTH; j++)
+    {
+      if(bin_image[i][j] == 255)
+      {
+        white_pixel_cnt++;
+      }
+      if(bin_image[i][j] == 0 && white_pixel_cnt >= 5)
+      {
+        white_pixel_cnt = 0;
+        black_line_l = j;
+        break;
+      }
+    }
+    white_pixel_cnt = 0;
+    for(uint8_t j = IMAGE_WIDTH - 1; j > 0; j--)
+    {
+      if(bin_image[i][j] == 255)
+      {
+        white_pixel_cnt++;
+      }
+      if(bin_image[i][j] == 0 && white_pixel_cnt >= 5)
+      {
+        white_pixel_cnt = 0;
+        black_line_r = j;
+        break;
+      }
+    }
+    if(black_line_l >= IMAGE_WIDTH - 2 || black_line_r <= 1)
+    {
+      black_line[i] = 0;
+    }
+    else
+    {
+      black_line[i] = (black_line_l + black_line_r) / 2;
+    }
+  }
+  for(uint8_t i = IMAGE_HEIGHT - 1; i > (uint8_t)(IMAGE_HEIGHT * 1.0 / 4.0); i--)
+  {
+    if((black_line[i] - black_line[i-1] > 5 || black_line[i] - black_line[i-1] < -5) && black_line[i] != 0)
+    {
+      black_line[i-1] = black_line[i];
+    }
+  }
+}
 
 /*
 函数名称：void image_process(void)
@@ -596,18 +729,19 @@ void image_process(void)
   image_filter(bin_image);      // 滤波
   image_draw_rectan(bin_image); // 预处理
   // 清零
-  data_stastics_l = 0;
-  data_stastics_r = 0;
-  if (get_start_point(IMAGE_HEIGHT - 2)) // 找到起点了，再执行八领域，没找到就一直找
-  {
-    //printf("正在开始八领域\n");
-    search_l_r((uint16_t)BORDER_LENGTH, bin_image, &data_stastics_l, &data_stastics_r, start_point_l[0], start_point_l[1], start_point_r[0], start_point_r[1], &hightest);
-    //printf("八邻域已结束\n");
-    // 从爬取的边界线内提取边线 ， 这个才是最终有用的边线
-    get_left(data_stastics_l);
-    get_right(data_stastics_r);
-    // 处理函数放这里，不要放到if外面去了，不要放到if外面去了，不要放到if外面去了，重要的事说三遍
-  }
+  // data_stastics_l = 0;
+  // data_stastics_r = 0;
+  // if (get_start_point(IMAGE_HEIGHT - 2)) // 找到起点了，再执行八领域，没找到就一直找
+  // {
+  //   //printf("正在开始八领域\n");
+  //   search_l_r((uint16_t)BORDER_LENGTH, bin_image, &data_stastics_l, &data_stastics_r, start_point_l[0], start_point_l[1], start_point_r[0], start_point_r[1], &hightest);
+  //   //printf("八邻域已结束\n");
+  //   // 从爬取的边界线内提取边线 ， 这个才是最终有用的边线
+  //   get_left(data_stastics_l);
+  //   get_right(data_stastics_r);
+  //   // 处理函数放这里，不要放到if外面去了，不要放到if外面去了，不要放到if外面去了，重要的事说三遍
+  // }
+  get_black_line(bin_image);
 
   // // 显示图像   改成你自己的就行 等后期足够自信了，显示关掉，显示屏挺占资源的
   // ips154_displayimage032_zoom(bin_image[0], IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT, 0, 0);
@@ -624,8 +758,15 @@ void image_process(void)
 
   for (i = hightest; i < IMAGE_HEIGHT; i++)
   {
-    center_line[i] = (l_border[i] + r_border[i]) >> 1; // 求中线
-    bin_image[i][center_line[i]] = BLACK_PIXEL;
+    //center_line[i] = (l_border[i] + r_border[i]) >> 1; // 求中线
+    bin_image[i][black_line[i]] = WHITE_PIXEL;
+    if(i == IMAGE_HEIGHT - 25 || i == IMAGE_HEIGHT - 15)
+    {
+      for(uint8_t j = 0; j < IMAGE_WIDTH; j++)
+      {
+        bin_image[i][j] = BLACK_PIXEL;
+      }
+    }
     // // 求中线最好最后求，不管是补线还是做状态机，全程最好使用一组边线，中线最后求出，不能干扰最后的输出
     // // 当然也有多组边线的找法，但是个人感觉很繁琐，不建议
     // ips154_drawpoint(center_line[i], i, uesr_GREEN); // 显示起点 显示中线

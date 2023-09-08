@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
   29:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   in several modes:
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   (+) Input mode
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   (+) Analog mode
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 2
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 2
 
 
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   (+) Output mode
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
   86:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****    (#) To lock pin configuration until next reset use HAL_GPIO_LockPin().
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****    (#) During and just after reset, the alternate functions are not
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 3
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 3
 
 
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****        active and the GPIO pins are configured in input floating mode (except JTAG
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  143:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** /**
  144:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   * @}
  145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   */
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 4
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 4
 
 
  146:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** /* Private macro -------------------------------------------------------------*/
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  182:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   uint32_t iocurrent;
   46              		.loc 1 182 3 view .LVU4
  183:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   uint32_t temp;
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 5
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 5
 
 
   47              		.loc 1 183 3 view .LVU5
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
   74 0020 15E0     		b	.L9
   75              	.L34:
   76 0022 A5F58015 		sub	r5, r5, #1048576
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 6
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 6
 
 
   77 0026 AA42     		cmp	r2, r5
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  250:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****             config = GPIO_CR_MODE_INPUT + GPIO_CR_CNF_INPUT_FLOATING;
  251:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****           }
  252:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****           else if (GPIO_Init->Pull == GPIO_PULLUP)
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 7
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 7
 
 
   90              		.loc 1 252 16 is_stmt 1 view .LVU21
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  114              		.loc 1 280 67 discriminator 1 view .LVU30
  115 0056 0646     		mov	r6, r0
  116              	.L16:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 8
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 8
 
 
  117              	.LVL6:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  292:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****         temp = AFIO->EXTICR[position >> 2u];
  160              		.loc 1 292 9 view .LVU46
  161              		.loc 1 292 38 is_stmt 0 view .LVU47
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 9
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 9
 
 
  162 0092 4FEA9C02 		lsr	r2, ip, #2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  207 00de 4F4A     		ldr	r2, .L39+20
  208              	.LVL14:
  209              		.loc 1 301 11 is_stmt 0 view .LVU61
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 10
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 10
 
 
  210 00e0 9368     		ldr	r3, [r2, #8]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  327:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
  328:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****         /* Configure the interrupt mask */
  329:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****         if ((GPIO_Init->Mode & GPIO_MODE_IT) == GPIO_MODE_IT)
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 11
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 11
 
 
  239              		.loc 1 329 9 view .LVU70
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  273 0134 33EA0202 		bics	r2, r3, r2
  274 0138 F1D1     		bne	.L3
  205:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 12
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 12
 
 
  275              		.loc 1 205 7 is_stmt 1 view .LVU85
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  319              		.loc 1 221 29 is_stmt 0 view .LVU95
  320 019c CC68     		ldr	r4, [r1, #12]
  321              	.LVL20:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 13
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 13
 
 
  221:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****           break;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  270:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****           break;
  360              		.loc 1 270 18 view .LVU112
  361 01b4 0024     		movs	r4, #0
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 14
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 14
 
 
  362              	.LVL28:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  406              	.LVL37:
  305:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****         }
  407              		.loc 1 305 11 view .LVU123
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 15
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 15
 
 
  408 01de 83E7     		b	.L21
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  459              	HAL_GPIO_DeInit:
  460              	.LVL40:
  461              	.LFB66:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 16
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 16
 
 
  343:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  372:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****       /* Clear the External Interrupt or Event for the current IO */
  373:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
  374:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****       tmp = AFIO->EXTICR[position >> 2u];
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 17
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 17
 
 
  375:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****       tmp &= 0x0FuL << (4u * (position & 0x03u));
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  518 0024 0EFA05FE 		lsl	lr, lr, r5
  519 0028 24EA0E04 		bic	r4, r4, lr
  520 002c 4FF0040C 		mov	ip, #4
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 18
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 18
 
 
  521 0030 0CFA05FC 		lsl	ip, ip, r5
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  559              		.loc 1 375 7 is_stmt 1 view .LVU163
  375:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4u * (position & 0x03u))))
  560              		.loc 1 375 40 is_stmt 0 view .LVU164
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 19
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 19
 
 
  561 005c 02F00304 		and	r4, r2, #3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  603              		.loc 1 384 9 view .LVU176
  604 00a6 A568     		ldr	r5, [r4, #8]
  605 00a8 25EA0305 		bic	r5, r5, r3
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 20
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 20
 
 
  606 00ac A560     		str	r5, [r4, #8]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  367:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
  649              		.loc 1 367 35 is_stmt 0 view .LVU187
  650 00d8 0123     		movs	r3, #1
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 21
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 21
 
 
  651 00da 9340     		lsls	r3, r3, r2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  410:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** /** @defgroup GPIO_Exported_Functions_Group2 IO operation functions
  411:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****  *  @brief   GPIO Read and Write
  412:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****  *
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 22
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 22
 
 
  413:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** @verbatim
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  719              	.LVL64:
  445:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   }
  446:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   return bitstatus;
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 23
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 23
 
 
  720              		.loc 1 446 3 is_stmt 1 view .LVU202
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  749 0004 7047     		bx	lr
  750              	.L71:
  474:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   }
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 24
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 24
 
 
  475:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   else
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  783              		.loc 1 498 3 is_stmt 1 view .LVU220
  784              		.loc 1 498 23 is_stmt 0 view .LVU221
  785 0002 01EA0302 		and	r2, r1, r3
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 25
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 25
 
 
  786              		.loc 1 498 59 view .LVU222
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  518:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** 
  519:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   /* Apply lock key write sequence */
  520:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****   SET_BIT(tmp, GPIO_Pin);
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 26
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 26
 
 
  823              		.loc 1 520 3 view .LVU232
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  858              		@ sp needed
  859 0028 7047     		bx	lr
  860              	.LVL72:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 27
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 27
 
 
  861              	.L76:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  567:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ****    */
  568:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c **** }
  888              		.loc 1 568 1 is_stmt 0 view .LVU251
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 28
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 28
 
 
  889 0000 7047     		bx	lr
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  936              	.L83:
  937 0018 00040140 		.word	1073808384
  938              		.cfi_endproc
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 29
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 29
 
 
  939              	.LFE71:
@@ -1689,31 +1689,31 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 1
  945              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
  946              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
  947              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s 			page 30
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s 			page 30
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_gpio.c
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:18     .text.HAL_GPIO_Init:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:288    .text.HAL_GPIO_Init:0000014c $d
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:307    .text.HAL_GPIO_Init:00000198 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:443    .text.HAL_GPIO_Init:00000208 $d
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:453    .text.HAL_GPIO_DeInit:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:459    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:681    .text.HAL_GPIO_DeInit:000000e8 $d
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:688    .text.HAL_GPIO_ReadPin:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:694    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:727    .text.HAL_GPIO_WritePin:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:733    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:763    .text.HAL_GPIO_TogglePin:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:769    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:799    .text.HAL_GPIO_LockPin:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:805    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:873    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:879    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:894    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:900    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
-C:\Users\wizar\AppData\Local\Temp\cc2TRlZf.s:937    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:18     .text.HAL_GPIO_Init:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:288    .text.HAL_GPIO_Init:0000014c $d
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:307    .text.HAL_GPIO_Init:00000198 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:443    .text.HAL_GPIO_Init:00000208 $d
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:453    .text.HAL_GPIO_DeInit:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:459    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:681    .text.HAL_GPIO_DeInit:000000e8 $d
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:688    .text.HAL_GPIO_ReadPin:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:694    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:727    .text.HAL_GPIO_WritePin:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:733    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:763    .text.HAL_GPIO_TogglePin:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:769    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:799    .text.HAL_GPIO_LockPin:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:805    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:873    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:879    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:894    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:900    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
+C:\Users\wizar\AppData\Local\Temp\ccnPePGV.s:937    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

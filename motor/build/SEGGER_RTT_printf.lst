@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
   30:RTT/SEGGER_RTT_printf.c **** * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,        *
   31:RTT/SEGGER_RTT_printf.c **** * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           *
   32:RTT/SEGGER_RTT_printf.c **** * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE           *
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 2
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 2
 
 
   33:RTT/SEGGER_RTT_printf.c **** * DISCLAIMED. IN NO EVENT SHALL SEGGER Microcontroller BE LIABLE FOR *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
   87:RTT/SEGGER_RTT_printf.c ****   unsigned  BufferSize;
   88:RTT/SEGGER_RTT_printf.c ****   unsigned  Cnt;
   89:RTT/SEGGER_RTT_printf.c **** 
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 3
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 3
 
 
   90:RTT/SEGGER_RTT_printf.c ****   int   ReturnValue;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
   53              		.loc 1 117 8 is_stmt 0 view .LVU10
   54 000e 2068     		ldr	r0, [r4]
   55              		.loc 1 117 25 view .LVU11
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 4
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 4
 
 
   56 0010 8154     		strb	r1, [r0, r2]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  125:RTT/SEGGER_RTT_printf.c ****     if (SEGGER_RTT_Write(p->RTTBufferIndex, p->pBuffer, p->Cnt) != p->Cnt) {
   92              		.loc 1 125 8 view .LVU26
   93 002e 9842     		cmp	r0, r3
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 5
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 5
 
 
   94 0030 03D0     		beq	.L4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  140 000a 1E46     		mov	r6, r3
  141 000c DDF828A0 		ldr	r10, [sp, #40]
  142 0010 0B9A     		ldr	r2, [sp, #44]
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 6
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 6
 
 
  143              	.LVL9:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  176              		.loc 1 155 6 is_stmt 0 view .LVU53
  177 0026 B045     		cmp	r8, r6
  178 0028 00D2     		bcs	.L10
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 7
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 7
 
 
  156:RTT/SEGGER_RTT_printf.c ****     Width = NumDigits;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  218              	.LVL17:
  171:RTT/SEGGER_RTT_printf.c ****         if (pBufferDesc->ReturnValue < 0) {
  219              		.loc 1 171 9 view .LVU68
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 8
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 8
 
 
  220              		.loc 1 171 24 is_stmt 0 view .LVU69
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  251              	.LVL22:
  183:RTT/SEGGER_RTT_printf.c ****       if (NumDigits > 1u) {       // User specified a min number of digits to print? => Make sure w
  252              		.loc 1 183 11 is_stmt 1 view .LVU80
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 9
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 9
 
 
  253              	.L19:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  283 0092 124A     		ldr	r2, .L29
  284 0094 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
  285 0096 4846     		mov	r0, r9
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 10
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 10
 
 
  286 0098 FFF7FEFF 		bl	_StoreChar
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  319 00c0 FAD0     		beq	.L7
  211:RTT/SEGGER_RTT_printf.c ****         while ((FieldWidth != 0u) && (Width < FieldWidth)) {
  320              		.loc 1 211 35 is_stmt 0 discriminator 1 view .LVU107
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 11
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 11
 
 
  321 00c2 C245     		cmp	r10, r8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  365              		.cfi_offset 6, -24
  366              		.cfi_offset 7, -20
  367              		.cfi_offset 8, -16
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 12
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 12
 
 
  368              		.cfi_offset 9, -12
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  241:RTT/SEGGER_RTT_printf.c ****   if (NumDigits > Width) {
  407              		.loc 1 241 3 view .LVU129
  408              		.loc 1 241 6 is_stmt 0 view .LVU130
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 13
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 13
 
 
  409 002a 4C45     		cmp	r4, r9
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  259:RTT/SEGGER_RTT_printf.c ****       }
  260:RTT/SEGGER_RTT_printf.c ****     }
  261:RTT/SEGGER_RTT_printf.c ****   }
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 14
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 14
 
 
  262:RTT/SEGGER_RTT_printf.c ****   //
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  287:RTT/SEGGER_RTT_printf.c ****         }
  288:RTT/SEGGER_RTT_printf.c ****       }
  289:RTT/SEGGER_RTT_printf.c ****       if (pBufferDesc->ReturnValue >= 0) {
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 15
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 15
 
 
  475              		.loc 1 289 7 is_stmt 1 view .LVU158
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  513 0096 F3DA     		bge	.L39
  514 0098 DCE7     		b	.L38
  515              	.L49:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 16
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 16
 
 
  267:RTT/SEGGER_RTT_printf.c ****       _StoreChar(pBufferDesc, '-');
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  557              		.loc 1 283 13 view .LVU182
  283:RTT/SEGGER_RTT_printf.c ****               break;
  558              		.loc 1 283 28 is_stmt 0 view .LVU183
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 17
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 17
 
 
  559 00ce FB68     		ldr	r3, [r7, #12]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  322:RTT/SEGGER_RTT_printf.c **** int SEGGER_RTT_vprintf(unsigned BufferIndex, const char * sFormat, va_list * pParamList) {
  589              		.loc 1 322 90 is_stmt 1 view -0
  590              		.cfi_startproc
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 18
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 18
 
 
  591              		@ args = 0, pretend = 0, frame = 88
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  632 0018 1693     		str	r3, [sp, #88]
  633 001a 8AE0     		b	.L81
  634              	.LVL52:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 19
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 19
 
 
  635              	.L89:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  670              	.LVL58:
  671              		.loc 1 354 60 is_stmt 1 view .LVU222
  672              		.loc 1 354 67 is_stmt 0 view .LVU223
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 20
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 20
 
 
  673 0036 0134     		adds	r4, r4, #1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  717 005c 43000000 		.word	.L84+1
  718 0060 43000000 		.word	.L84+1
  719 0064 43000000 		.word	.L84+1
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 21
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 21
 
 
  720 0068 43000000 		.word	.L84+1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  761              	.LVL72:
  762              	.L63:
  371:RTT/SEGGER_RTT_printf.c **** 
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 22
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 22
 
 
  372:RTT/SEGGER_RTT_printf.c ****       //
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  384:RTT/SEGGER_RTT_printf.c ****           NumDigits = NumDigits * 10u + ((unsigned)c - '0');
  792              		.loc 1 384 11 is_stmt 1 view .LVU266
  384:RTT/SEGGER_RTT_printf.c ****           NumDigits = NumDigits * 10u + ((unsigned)c - '0');
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 23
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 23
 
 
  793              		.loc 1 384 18 is_stmt 0 view .LVU267
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  399:RTT/SEGGER_RTT_printf.c ****       } while (1);
  828              		.loc 1 399 15 is_stmt 1 view .LVU283
  829              	.L69:
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 24
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 24
 
 
  392:RTT/SEGGER_RTT_printf.c ****         if ((c == 'l') || (c == 'h')) {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  876 0111 18       		.byte	(.L71-.L73)/2
  877 0112 57       		.byte	(.L76-.L73)/2
  878 0113 18       		.byte	(.L71-.L73)/2
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 25
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 25
 
 
  879 0114 18       		.byte	(.L71-.L73)/2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  425:RTT/SEGGER_RTT_printf.c ****         {
  426:RTT/SEGGER_RTT_printf.c ****           const char * s = va_arg(*pParamList, const char *);
  427:RTT/SEGGER_RTT_printf.c ****           do {
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 26
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 26
 
 
  428:RTT/SEGGER_RTT_printf.c ****             c = *s;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  343:RTT/SEGGER_RTT_printf.c ****       //
  935              		.loc 1 343 8 is_stmt 0 view .LVU312
  936 013a 2529     		cmp	r1, #37
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 27
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 27
 
 
  937 013c 3FF46EAF 		beq	.L89
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  979 016c 13A8     		add	r0, sp, #76
  980              	.LVL100:
  417:RTT/SEGGER_RTT_printf.c ****         break;
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 28
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 28
 
 
  981              		.loc 1 417 9 view .LVU325
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  428:RTT/SEGGER_RTT_printf.c ****             s++;
  1023              		.loc 1 428 13 view .LVU338
  428:RTT/SEGGER_RTT_printf.c ****             s++;
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 29
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 29
 
 
  1024              		.loc 1 428 15 is_stmt 0 view .LVU339
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  439:RTT/SEGGER_RTT_printf.c ****         break;
  1065              		.loc 1 439 9 is_stmt 0 view .LVU353
  1066 01bc FFF7FEFF 		bl	_PrintUnsigned
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 30
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 30
 
 
  1067              	.LVL116:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  1104              		.loc 1 463 1 is_stmt 0 view .LVU368
  1105 01de 1698     		ldr	r0, [sp, #88]
  1106 01e0 19B0     		add	sp, sp, #100
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 31
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 31
 
 
  1107              	.LCFI8:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  491:RTT/SEGGER_RTT_printf.c **** *          u: Print the argument as an unsigned integer
  492:RTT/SEGGER_RTT_printf.c **** *          x: Print the argument as an hexadecimal integer
  493:RTT/SEGGER_RTT_printf.c **** *          s: Print the string pointed to by the argument
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 32
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 32
 
 
  494:RTT/SEGGER_RTT_printf.c **** *          p: Print the argument as an 8-digit hexadecimal integer. (Argument shall be a pointer to
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  1178              		.cfi_restore 2
  1179              		.cfi_restore 1
  1180              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 33
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 33
 
 
  1181 001c 7047     		bx	lr
@@ -1937,29 +1937,29 @@ ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 1
  1194              		.file 2 "e:\\devtools\\armtoolchain\\10 2021.10\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.
  1195              		.file 3 "<built-in>"
  1196              		.file 4 "RTT/SEGGER_RTT.h"
-ARM GAS  C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s 			page 34
+ARM GAS  C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 SEGGER_RTT_printf.c
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:18     .text._StoreChar:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:23     .text._StoreChar:00000000 _StoreChar
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:111    .text._PrintUnsigned:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:116    .text._PrintUnsigned:00000000 _PrintUnsigned
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:342    .text._PrintUnsigned:000000dc $d
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:347    .text._PrintInt:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:352    .text._PrintInt:00000000 _PrintInt
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:580    .text.SEGGER_RTT_vprintf:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:586    .text.SEGGER_RTT_vprintf:00000000 SEGGER_RTT_vprintf
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:715    .text.SEGGER_RTT_vprintf:00000054 $d
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:730    .text.SEGGER_RTT_vprintf:0000008c $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:853    .text.SEGGER_RTT_vprintf:000000fa $d
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:1126   .text.SEGGER_RTT_printf:00000000 $t
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:1132   .text.SEGGER_RTT_printf:00000000 SEGGER_RTT_printf
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:1186   .rodata._aV2C.0:00000000 $d
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:1190   .rodata._aV2C.0:00000000 _aV2C.0
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:886    .text.SEGGER_RTT_vprintf:0000011b $d
-C:\Users\wizar\AppData\Local\Temp\cchs2G9F.s:886    .text.SEGGER_RTT_vprintf:0000011c $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:18     .text._StoreChar:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:23     .text._StoreChar:00000000 _StoreChar
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:111    .text._PrintUnsigned:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:116    .text._PrintUnsigned:00000000 _PrintUnsigned
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:342    .text._PrintUnsigned:000000dc $d
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:347    .text._PrintInt:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:352    .text._PrintInt:00000000 _PrintInt
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:580    .text.SEGGER_RTT_vprintf:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:586    .text.SEGGER_RTT_vprintf:00000000 SEGGER_RTT_vprintf
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:715    .text.SEGGER_RTT_vprintf:00000054 $d
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:730    .text.SEGGER_RTT_vprintf:0000008c $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:853    .text.SEGGER_RTT_vprintf:000000fa $d
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:1126   .text.SEGGER_RTT_printf:00000000 $t
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:1132   .text.SEGGER_RTT_printf:00000000 SEGGER_RTT_printf
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:1186   .rodata._aV2C.0:00000000 $d
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:1190   .rodata._aV2C.0:00000000 _aV2C.0
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:886    .text.SEGGER_RTT_vprintf:0000011b $d
+C:\Users\wizar\AppData\Local\Temp\ccYygu6y.s:886    .text.SEGGER_RTT_vprintf:0000011c $t
 
 UNDEFINED SYMBOLS
 SEGGER_RTT_Write

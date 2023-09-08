@@ -21,9 +21,12 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
+
+#include "pid.h"
+
 uint16_t encoder_cnt;
 uint8_t encoder_dir;
-
+int8_t motor_pulse;
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim1;
@@ -73,7 +76,7 @@ void MX_TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 6;
+  sConfigOC.Pulse = 7;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -317,6 +320,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     encoder_dir = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1);
     encoder_cnt = __HAL_TIM_GetCounter(&htim2);
     __HAL_TIM_SetCounter(&htim2, 0);
+
+    motor_pulse = PID_Cal(&speed_pid, 10.0f, encoder_cnt);
+    if(motor_pulse < 0)
+    {
+      motor_pulse = 0;
+    }
+    else if (motor_pulse > 15)
+    {
+      motor_pulse = 15;
+    }
+    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, motor_pulse);
   }
 }
 /* USER CODE END 1 */

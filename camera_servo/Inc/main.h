@@ -61,6 +61,14 @@ void Error_Handler(void);
 #define SIM_I2C1_SCL_GPIO_Port GPIOB
 #define SIM_I2C1_SDA_Pin GPIO_PIN_9
 #define SIM_I2C1_SDA_GPIO_Port GPIOB
+#define KEY_Pin GPIO_PIN_0
+#define KEY_GPIO_Port GPIOA
+#define KEY_EXTI_IRQn EXTI0_IRQn
+#define ENCODER_PULSE_Pin GPIO_PIN_12
+#define ENCODER_PULSE_GPIO_Port GPIOB
+#define ENCODER_PULSE_EXTI_IRQn EXTI15_10_IRQn
+#define ENCODER_DIR_Pin GPIO_PIN_13
+#define ENCODER_DIR_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

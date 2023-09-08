@@ -1,4 +1,4 @@
-build/main.o: Src/main.c Inc/main.h \
+build/pid.o: algorithm/pid/pid.c algorithm/pid/pid.h Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  Inc/stm32f1xx_hal_conf.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -20,9 +20,8 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h Inc/tim.h \
- Inc/main.h Inc/gpio.h RTT/log.h RTT/SEGGER_RTT.h RTT/SEGGER_RTT_Conf.h \
- algorithm/pid/pid.h
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+algorithm/pid/pid.h:
 Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Inc/stm32f1xx_hal_conf.h:
@@ -48,10 +47,3 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
-Inc/tim.h:
-Inc/main.h:
-Inc/gpio.h:
-RTT/log.h:
-RTT/SEGGER_RTT.h:
-RTT/SEGGER_RTT_Conf.h:
-algorithm/pid/pid.h:
