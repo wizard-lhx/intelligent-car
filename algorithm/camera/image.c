@@ -645,7 +645,7 @@ float calc_center_line_error(void)
   // }
   if(slope != 0)
   {
-    error = (35 - intercept) / slope;
+    error = (40 - intercept) / slope;
   }
   else
   {

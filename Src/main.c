@@ -106,7 +106,7 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
-  PID_Init(&angle_pid, 10.0f, 0.0f, 3.0f, 0.0f, 500.0f);
+  PID_Init(&angle_pid, 10.0f, 0.0f, 5.0f, 0.0f, 500.0f);
   PID_Init(&speed_pid, 0.4f, 0.2f, 0.0f, 10.0f, 10.0f);
   while(mt9v03x_init())
   {
